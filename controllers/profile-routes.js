@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const {Person} = require('../models');
+const { Person } = require('../models');
 
-router.get('/', (req, res) => {
-    Person.findAll({
+router.get('/:id', (req, res) => {
+    Person.findOne({
+        where: {
+            id: req.params.id
+        },
         attributes: [
             'id',
             'last_name',
@@ -11,13 +14,12 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbPersonData => {
-        res.render('homepage', dbPersonData[0].get({ plain: true }));
+        res.render('profile', dbPersonData.get({ plain: true }));
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json(err)
     });
 });
-
 
 module.exports = router;

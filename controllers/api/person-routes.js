@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
    })
 });
 
+
 router.get('/:id', (req, res) => {
     Person.findOne({
         where: {
@@ -38,7 +39,7 @@ router.get('/:id', (req, res) => {
     })
     .catch(err => {
         res.status(500).json(err);
-    })
-})
+    });
+});
 
 module.exports = router;
