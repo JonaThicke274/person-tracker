@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Person } = require('../../models');
+const withAuth = require (`../../utils/auth.js`)
 
 // get all user
 router.get('/', (req, res) => {
@@ -105,11 +106,12 @@ router.post(`/logout`, (req, res) => {
 });
 
 // update user
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     User.update(req.body, {
         individualHooks: true,
         where: {
-            id: req.params.id
+            // Ensures the only updated user is whoever is logged in
+            id: req.session.user_id
         }
     })
     .then(dbUserData => {
@@ -126,17 +128,20 @@ router.put('/:id', (req, res) => {
 });
 
 // delete user
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
         where: {
-            id: req.params.id
+            // Ensures the only deleted user is whoever is logged in if they so choose to
+            id: req.session.user_id
         }
     }).then(dbUserData => {
         if (!dbUserData) {
             res.status(404).json({ message: 'No user found with this id' });
             return;
         }
-        res.json({dbUserData, message: 'User deleted'});
+        // Not necessary for project right now but needs to delete/log out of session once a user deletes themselves from app
+        // After user deletion, Insomnia still acts as there is a session active
+        res.json({dbUserData, message: 'User deleted'})
       })
       .catch(err => {
             console.log(err);

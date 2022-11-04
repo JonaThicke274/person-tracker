@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // importing other models yet to be created
 const { Person, User/*, Note */ } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get all people
 router.get('/', (req, res) => {
@@ -65,12 +66,12 @@ router.get('/:id', (req, res) => {
 });
 
 // create new person
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Person.create({
         last_name: req.body.last_name,
         first_name: req.body.first_name,
         // This will associate the person with the user who is logged in
-        user_id: req.session.user_ud
+        user_id: req.session.user_id
     })
     .then(dbPersonData => res.json(dbPersonData))
     .catch(err => {
@@ -80,7 +81,7 @@ router.post('/', (req, res) => {
 });
 
 // update person info by id
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Person.update({
         last_name: req.body.last_name,
         first_name: req.body.first_name
@@ -104,7 +105,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete person by id 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Person.destroy({
         where: {
             id: req.params.id
