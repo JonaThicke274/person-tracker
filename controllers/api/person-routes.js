@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // importing other models yet to be created
-const { Person, /*User, Note */ } = require('../../models');
+const { Person, User/*, Note */ } = require('../../models');
 
 // get all people
 router.get('/', (req, res) => {
@@ -11,16 +11,16 @@ router.get('/', (req, res) => {
         'first_name'
     ],
     order: [[`last_name`]],
-    // include: [
-    //     {
-    //         model: User,
-    //         attributes: [`id`, `last_name`, `first_name`, `username`],
-    //     },
+    include: [
+        {
+            model: User,
+            attributes: [`id`, `username`, `email`],
+        },
     //     {
     //         model: Note,
     //         attributes: [/* INSERT NOTE ATTRIBUTES*/]
     //     }
-    // ]
+    ]
    })
    .then(dbPersonData => res.json(dbPersonData))
    .catch(err => {
@@ -40,16 +40,16 @@ router.get('/:id', (req, res) => {
             'last_name',
             'first_name'
         ],
-        // include: [
-        //     {
-        //         model: User,
-        //         attributes: [`id`, `last_name`, `first_name`, `username`],
-        //     },
+        include: [
+            {
+                model: User,
+                attributes: [`id`, `username`, `email`],
+            },
         //     {
         //         model: Note,
         //         attributes: [/* INSERT NOTE ATTRIBUTES*/]
         //     }
-        // ]
+        ]
     })
     .then(dbPersonData => {
         if(!dbPersonData){
@@ -70,7 +70,7 @@ router.post('/', (req, res) => {
         last_name: req.body.last_name,
         first_name: req.body.first_name,
         // This will associate the person with the user who is logged in
-        // user_id: req.session.user_ud
+        user_id: req.session.user_ud
     })
     .then(dbPersonData => res.json(dbPersonData))
     .catch(err => {

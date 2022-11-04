@@ -1,5 +1,5 @@
 // import models
-const User = require(`./User`)
+const User = require(`./User`);
 const Person = require('./Person');
 
 // model associations
