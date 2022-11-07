@@ -1,0 +1,30 @@
+/* MAINPAGE/HOMEPAGE */
+main {
+    background-color: #c9f2f6
+}
+
+
+.nav-wrapper {
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* PROFILE PAGE */
+.icons i {
+    border: #00838f solid;
+    border-radius: 90px;
+    padding: 10px;
+}
+
+.col {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+
+}
+
+#name-plate {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 42px;
+}

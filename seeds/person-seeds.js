@@ -4,12 +4,14 @@ const personData = [
     {
         last_name: 'Olafson',
         first_name: 'Freyja',
+        has_children: 0,
         user_id: 1
 
     },
     {
         last_name: 'Abbia',
         first_name: 'Noctis',
+        has_children: 1,
         user_id: 2
     },
     {

@@ -1,6 +1,7 @@
 // import models
 const User = require(`./User`);
 const Person = require('./Person');
+const Notes = require('./Notes')
 
 // model associations
 
@@ -12,8 +13,16 @@ Person.belongsTo(User, {
     foreignKey: `user_id`
 });
 
+Person.hasMany(Notes, {
+    foreignKey: `person_id`
+})
+
+Notes.belongsTo(Person, {
+    foreignKey: `person_id`
+})
 
 module.exports = {
     Person,
-    User
+    User,
+    Notes
 }

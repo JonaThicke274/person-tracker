@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Person } = require('../models');
+const { Person, Notes } = require('../models');
 
 router.get('/:id', (req, res) => {
     Person.findOne({
@@ -10,7 +10,14 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'last_name',
-            'first_name'
+            'first_name',
+            'has_children'
+        ],
+        include: [
+            {
+                model: Notes,
+                attributes: ['id', 'note_text', 'person_id']
+            }
         ]
     })
     .then(dbPersonData => {

@@ -19,6 +19,14 @@ Person.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        has_children: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        },
+        has_pets: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        }
         // user_id: {
         //     type: DataTypes.INTEGER,
         //     references: {
