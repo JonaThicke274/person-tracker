@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // importing other models yet to be created
-const { Person, User/*, Note */ } = require('../../models');
+const { Person, User,/*, Note */ 
+Notes} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all people
@@ -17,10 +18,10 @@ router.get('/', (req, res) => {
             model: User,
             attributes: [`id`, `username`, `email`],
         },
-    //     {
-    //         model: Note,
-    //         attributes: [/* INSERT NOTE ATTRIBUTES*/]
-    //     }
+        {
+            model: Notes,
+            attributes: [`id`, `note_text`, `person_id`]
+        }
     ]
    })
    .then(dbPersonData => res.json(dbPersonData))
