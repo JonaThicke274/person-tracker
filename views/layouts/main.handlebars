@@ -7,9 +7,7 @@
   <title>Person Tracker</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <script src="https://kit.fontawesome.com/5db11db1bb.js" crossorigin="anonymous"></script>
-  <link type="text/css" rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
 </head>
 
 <body>
@@ -55,17 +53,81 @@
       </div>
 
     </div>
-{{!-- <a id="add-button" href="#modal1" class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a> --}}
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-  <!-- Modal Structure -->
+{{!--MODAL BUTTON  --}}
+<a id="add-button" onclick=document.getElementById('modal1').style.display='block' href="#modal1" class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a>
+
+
+  <!-- ADD PERSON MODAL -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+      <a href="#!" id="cancel-add" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <h4>Add New Profile</h4>
+      <div class="row">
+    <form class="col s12">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" placeholder="First Name">
+
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" placeholder="Last Name">
+
+            </div>
+        </div>
+        <div class="row">
+            <p>Check any of the following you know to be true:</p>
+            <div class="icon-row col s6">
+                <p>
+                    <label>
+                        <input type="checkbox"/>
+                        <span>Has child(ren)</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Has pet(s)</span>
+                    </label>
+                </p>
+                                <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Enjoys sports</span>
+                    </label>
+                </p>
+            </div>
+            <div class="row">
+                <div class="icon-row col s6">
+                    <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Film junkie</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+{{!--  ADD CODE TO GET       --}}
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'>Submit</a>
+ 
     </div>
   </div> 
   
@@ -79,8 +141,10 @@
 </footer>
 
   {{!-- Materialize script --}}
-  <script type="text/javascript" src="./../../public/javasript/materialize.js"></script>
-  <script type="text/javascript" src="./../../public/javasript/placeholder-frontend.js"></script>
+  {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js" integrity="sha512-m2PhLxj2N91eYrIGU2cmIu2d0SkaE4A14bCjVb9zykvp6WtsdriFCiXQ/8Hdj0kssUB/Nz0dMBcoLsJkSCto0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://kit.fontawesome.com/5db11db1bb.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
