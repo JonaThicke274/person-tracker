@@ -54,14 +54,16 @@
 
     </div>
 
-{{!--MODAL BUTTON  --}}
-<a id="add-button" onclick=document.getElementById('modal1').style.display='block' href="#modal1" class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a>
 
+{{!--MODAL BUTTON  --}}
+<div class="fixed-action-btn">
+<a id="add-button" onclick = document.getElementById('modalAddProfile').style.display='block' class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a>
+</div>
 
   <!-- ADD PERSON MODAL -->
-  <div id="modal1" class="modal">
+  <div id="modalAddProfile" class="modal">
     <div class="modal-content">
-      <a href="#!" id="cancel-add" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <a id="cancel-add" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddProfile').style.display='none'><i class="fa-solid fa-x"></i></a>
       <h4>Add New Profile</h4>
       <div class="row">
     <form class="col s12">
