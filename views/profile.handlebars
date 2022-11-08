@@ -28,7 +28,95 @@
     </div>
     <div class='profile-buttons'>
         {{!-- EDIT BUTTONS --}}
-        <a class="waves-effect waves-light #00838f cyan darken-3 btn">Edit Profile</a>
+        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalEditProfile').style.display='block'>Edit Profile</a>
         <a class="waves-effect waves-light #00838f cyan darken-3 btn">Add Note</a>
     </div>
 </div>
+
+
+{{!-- Edit Modal --}}
+<div id="modalEditProfile" class="modal">
+    <div class="modal-content">
+      <a id="cancel-edit" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalEditProfile').style.display='none'><i class="fa-solid fa-x"></i></a>
+      <h4>Edit Profile</h4>
+      <div class="row">
+    <form class="col s12">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" placeholder={{first_name}}>
+
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate blue-text text-darken-2" placeholder={{last_name}}>
+
+            </div>
+        </div>
+        <div class="row">
+            <p>Alter any traits that have changed:</p>
+            <div class="icon-row col s6">
+                <p>
+                    <label for="chldrn">
+                        <input id="chldrn" type="checkbox" 
+                        {{#if has_children}}
+                        checked="checked"
+                        {{/if}}
+                        />
+                     
+                        <span>Has child(ren)</span>
+                    </label>
+                </p>
+                <p>
+                    <label for="pets">
+                        <input id="pets" type="checkbox"
+                        {{#if has_pets}}
+                        checked="checked"
+                        {{/if}} />
+                        <span>Has pet(s)</span>
+                    </label>
+                </p>
+                                <p>
+                    <label for="sports">
+                        <input id="sports" type="checkbox" 
+                        {{#if likes_sports}}
+                        checked="checked"
+                        {{/if}} />
+                        <span>Enjoys sports</span>
+                    </label>
+                </p>
+            </div>
+            <div class="row">
+                <div class="icon-row col s6">
+                    <p>
+                        <label for="media">
+                            <input id="media" type="checkbox"
+                            {{#if likes_media}}
+                            checked="checked"
+                            {{/if}} />
+                            <span>Film junkie</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                                        <p>
+                        <label>
+                            <input type="checkbox" />
+                            <span>Yellow</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    </div>
+    <div class="modal-footer">
+{{!--  ADD CODE TO Put       --}}
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'>Save</a>
+ 
+    </div>
+  </div> 
