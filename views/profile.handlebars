@@ -45,11 +45,11 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <input id="first_name" type="text" class="validate" placeholder={{first_name}}>
+                <input id="first_name" type="text" class="validate" placeholder={{first_name}} value={{first_name}}>
 
             </div>
             <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate blue-text text-darken-2" placeholder={{last_name}}>
+                <input id="last_name" type="text" class="validate blue-text text-darken-2" placeholder={{last_name}} value={{last_name}}>
 
             </div>
         </div>
@@ -61,6 +61,9 @@
                         <input id="chldrn" type="checkbox" 
                         {{#if has_children}}
                         checked="checked"
+                        value="1"
+                        {{else}}
+                        value="0"
                         {{/if}}
                         />
                      
@@ -72,6 +75,9 @@
                         <input id="pets" type="checkbox"
                         {{#if has_pets}}
                         checked="checked"
+                        value="1"
+                        {{else}}
+                        value="0"
                         {{/if}} />
                         <span>Has pet(s)</span>
                     </label>
@@ -81,6 +87,9 @@
                         <input id="sports" type="checkbox" 
                         {{#if likes_sports}}
                         checked="checked"
+                        value = "1"
+                        {{else}}
+                        value="0"
                         {{/if}} />
                         <span>Enjoys sports</span>
                     </label>
@@ -93,6 +102,8 @@
                             <input id="media" type="checkbox"
                             {{#if likes_media}}
                             checked="checked"
+                            {{else}}
+                            value="0"
                             {{/if}} />
                             <span>Film junkie</span>
                         </label>
@@ -117,7 +128,7 @@
     </div>
     <div class="modal-footer">
 {{!--  ADD CODE TO Put       --}}
-      <a href="" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalEditProfile').style.display='none'>Save</a>
+      <a id='submit-edit' class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalEditProfile').style.display='none'>Save</a>
  
     </div>
   </div> 
@@ -151,3 +162,5 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalDeleteProfile').style.display='none'>Delete<i class="fa-solid fa-trash"></i></a>
     </div>
   </div>
+
+  <script src="./../public/javascript/edit-profile.js"></script>
