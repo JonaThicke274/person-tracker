@@ -18,5 +18,10 @@ const userData = [
     }
 ]
 
-const seedUser = () => User.bulkCreate(userData);
+const seedUser = async () => {
+    for (const u of userData) {
+        await User.create(u)
+    }
+}
+
 module.exports = seedUser;
