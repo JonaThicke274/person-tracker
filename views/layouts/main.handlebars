@@ -17,13 +17,14 @@
       <div class="nav-wrapper #558b2f light-green darken-3">
         <a href="#" class="brand-logo">Person-Tracker</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="">Log In</a></li>
-          <li><a href="">Something</a></li>
-          <li><a href="">Something</a></li>
+          {{!-- <li><a href="">Log In</a></li> --}}
+          {{!-- <li><a href="">Something</a></li> --}}
+          <li><a href="">Log Out<i class="fa-solid fa-right-from-bracket"></i></a></li>
         </ul>
       </div>
     </nav>
   </header>
+  
   <main>
     <div class="row">
 
@@ -40,7 +41,7 @@
         <div class="recent-entries">
           <h2>Recent Entries:</h2>
           <ul>
-            <li></li>
+            {{#each person}}<li>{{this.first_name}}</li>{{/each}}
           </ul>
         </div>
 

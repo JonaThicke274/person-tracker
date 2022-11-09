@@ -26,6 +26,14 @@ Person.init(
         has_pets: {
             type: DataTypes.BOOLEAN,
             allowNull: true
+        },
+        likes_sports: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        },
+        likes_media: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         }
         // user_id: {
         //     type: DataTypes.INTEGER,

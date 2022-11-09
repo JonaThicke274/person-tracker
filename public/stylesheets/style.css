@@ -1,18 +1,68 @@
 /* MAINPAGE/HOMEPAGE */
-main {
-    background-color: #c9f2f6
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+main {
+    background-color: #c9f2f6;
+    flex: 1 0 auto;
 
+}
 
 .nav-wrapper {
     font-family: 'Libre Baskerville', serif;
 }
 
+.fa-right-from-bracket, .fa-trash{
+    margin-left: 10px;
+}
+.modal-close {
+    float: right;
+}
+
+#magnifying {
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+#close-symbol {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.recent-entries {
+    margin-bottom: 100%;
+}
+
+#modalAddProfile {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+/* Login form */
+.login-form button {
+    justify-content: center;
+}
+
+footer {
+background-color: #1ecbdb;
+}
+
+
 /* PROFILE PAGE */
+
 .icons i {
     border: #00838f solid;
     border-radius: 90px;
     padding: 10px;
+    font-size: 35px;
+    margin-right: 5px;
 }
 
 .col {
@@ -24,7 +74,26 @@ main {
 
 }
 
-#name-plate {
+.profile {
     font-family: 'Libre Baskerville', serif;
-    font-size: 42px;
+    list-style-type: circle;
+    margin-left: 10px;
+    padding-bottom: 100%;
+}
+
+.profile-buttons{
+    justify-content: center;
+}
+
+.notes-list li{
+    list-style-type: circle;
+}
+
+#modalEditProfile, #modalAddNote, #modalDeleteProfile {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }

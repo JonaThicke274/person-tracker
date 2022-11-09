@@ -5,6 +5,8 @@ const personData = [
         last_name: 'Olafson',
         first_name: 'Freyja',
         has_children: 0,
+        has_pets: 1,
+        likes_sports: 0,
         user_id: 1
 
     },
@@ -12,6 +14,9 @@ const personData = [
         last_name: 'Abbia',
         first_name: 'Noctis',
         has_children: 1,
+        has_pets: 1,
+        likes_sports: 1,
+        likes_media: 1,
         user_id: 2
     },
     {

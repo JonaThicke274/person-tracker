@@ -11,7 +11,10 @@ router.get('/:id', (req, res) => {
             'id',
             'last_name',
             'first_name',
-            'has_children'
+            'has_children',
+            'has_pets',
+            'likes_sports',
+            'likes_media'
         ],
         include: [
             {
