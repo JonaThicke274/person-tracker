@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Router } = require('express');
 const sequelize = require('../config/connection');
 const {Person, Notes } = require('../models');
 
@@ -11,19 +12,20 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbPersonData => {
-        console.log(dbPersonData);
-        const persons = dbPersonData.map(post=> post.get({ plain: true}))
+        
+        const persons = dbPersonData.map(person => person.get({ plain: true }))
+        console.log(persons)
         res.render('homepage', { 
             persons,
-            loggedIn: req.session.loggedIn
-         }) 
-        
+            // loggedIn: req.session.loggedIn
+         })      
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err)
     })
 });
+
 
 router.get(`/login`, (req, res) => {
     if (req.session.loggedIn) {
@@ -33,6 +35,8 @@ router.get(`/login`, (req, res) => {
 
     res.render(`login`);
 });
+
+
 
 
 module.exports = router;

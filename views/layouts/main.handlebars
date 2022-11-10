@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Person Tracker</title>
+  <title>Pocket Portraits</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
@@ -15,7 +15,7 @@
   <header>
     <nav>
       <div class="nav-wrapper #558b2f light-green darken-3">
-        <a href="/" class="brand-logo">Person-Tracker</a>
+        <a href="/" class="brand-logo">Pocket Portraits</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 
           <li><a href="/login">Log In<i class="fa-solid fa-play"></i></a></li>
@@ -40,9 +40,9 @@
         </form>
         {{!-- RECENT ENTRIES --}}
         <div class="recent-entries">
-          <h2>Recent Entries:</h2>
-          <ul>
-            {{#each person}}<li>{{this.first_name}}</li>{{/each}}
+          <h5>Recent Entries:</h5>
+          <ul class="recent-list">
+            {{#each persons as |person|}}<a class="black-text" href="/profile/{{person.id}}"><li>{{person.first_name}} {{person.last_name}}<i class="fa-solid fa-arrow-right"></i></a></li>{{/each}}
           </ul>
         </div>
 
@@ -55,7 +55,6 @@
       </div>
 
     </div>
-
 
 <div class="fixed-action-btn">
 <a id="add-profile-button" onclick = document.getElementById('modalAddProfile').style.display='block' class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a>
@@ -84,19 +83,19 @@
             <div class="icon-row col s6">
                 <p>
                     <label>
-                        <input type="checkbox"/>
+                        <input id="has_children" type="checkbox"/>
                         <span>Has child(ren)</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" />
+                        <input id="has_pets" type="checkbox" />
                         <span>Has pet(s)</span>
                     </label>
                 </p>
-                                <p>
+                 <p>
                     <label>
-                        <input type="checkbox" />
+                        <input id="likes_sports" type="checkbox" />
                         <span>Enjoys sports</span>
                     </label>
                 </p>
@@ -104,24 +103,12 @@
             <div class="row">
                 <div class="icon-row col s6">
                     <p>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Film junkie</span>
-                        </label>
-                    </p>
-                                        <p>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Yellow</span>
-                        </label>
-                    </p>
-                                        <p>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Yellow</span>
-                        </label>
-                    </p>
-                </div>
+                      <label>
+                          <input id="likes_media" type="checkbox" />
+                          <span>Film junkie</span>
+                      </label>
+                  </p>
+              </div>
             </div>
         </div>
     </form>
@@ -129,20 +116,18 @@
     </div>
     <div class="modal-footer">
 {{!--  ADD CODE TO GET       --}}
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'>Submit</a>
+      <a id="submitProfile" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddProfile').style.display='none'>Submit</a>
  
     </div>
   </div> 
 
 </main>
 
-  
-
 
 <footer class="page-footer #00acc1 cyan darken-1">
   <div class="container">
     <div>
-      <p>Copyright Text</p>
+
     </div>
   </div>
 
@@ -154,6 +139,8 @@
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/edit-profile.js"></script>
 <script src="/javascript/delete-profile.js"></script>
+<script src="/javascript/add-note.js"></script>
+<script src="/javascript/add-profile.js"></script>
 </body>
 
 </html>

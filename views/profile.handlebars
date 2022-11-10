@@ -22,7 +22,8 @@
     <div class="notes-list">
         <ul>
             {{#each notes}}
-            <li>{{this.note_text}}</li>
+            <li><i class="fa-solid fa-circle"></i>{{this.note_text}}</li>
+            <div class="note-divider"></div>
             {{/each}}
         </ul>
     </div>
@@ -146,7 +147,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddNote').style.display='none'>Submit</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddNote').style.display='none' id="submit-note">Submit</a>
     </div>
   </div>
 
@@ -163,4 +164,4 @@
     </div>
   </div>
 
-  
+  <script src="/javascript/add-profile.js"></script>

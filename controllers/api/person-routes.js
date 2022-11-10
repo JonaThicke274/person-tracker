@@ -65,11 +65,17 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
+
 // create new person
 router.post('/', withAuth, (req, res) => {
     Person.create({
         last_name: req.body.last_name,
         first_name: req.body.first_name,
+        has_children: req.body.has_children,
+        has_pets: req.body.has_pets,
+        likes_sports: req.body.likes_sports,
+        likes_media: req.body.likes_media,
         // This will associate the person with the user who is logged in
         user_id: req.session.user_id
     })
