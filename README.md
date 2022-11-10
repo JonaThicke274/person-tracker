@@ -1,4 +1,4 @@
-Project 2
+# Pocket Portraits
 
 
 ## Purpose
@@ -19,12 +19,12 @@ Project 2
     - Mysql2
 
 ## Usage
+- After creating an account, create profiles for people you'd like to remember using the '+' button in the bottom right corner of the application. Afterwards, anytime you learn anything new, navigate to your profiles to add new notes, update characteristics, or remove them from the database.
 
-## Deployment
 
 ## Deployment Screenshot
 
+
+
 ## Contributions
 - Made by Jonathan Arevalo, Lacy Holleman, and Temuulen Munkhbat
-
-## License
