@@ -53,6 +53,18 @@ router.put('/:id', (req, res) => {
     })
 })
  
+//ADD NOTE
+router.post('/', (req, res) => {
+    Notes.create({
+        note_text: req.body.note_text,
+        person_id: req.body.person_id
+    })
+    .then(dbNoteData => res.json(dbNoteData))
+    .catch(err=> {
+        console.log(err);
+        res.status(500).json(err)
+    })
+})
 
 
 

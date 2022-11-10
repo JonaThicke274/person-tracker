@@ -65,6 +65,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
+
 // create new person
 router.post('/', withAuth, (req, res) => {
     Person.create({

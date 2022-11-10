@@ -34,10 +34,17 @@ main {
 
 .recent-entries {
     margin-bottom: 100%;
+    font-family: 'Libre Baskerville', serif;
 }
 .recent-list {
-    font-size: 30px;
+    font-size: 25px;
+    font-family: 'Libre Baskerville', serif;
 }
+
+.fa-circle {
+    font-size: 5px;
+}
+
 
 #modalAddProfile {
     position: absolute;
