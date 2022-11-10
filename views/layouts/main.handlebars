@@ -40,9 +40,9 @@
         </form>
         {{!-- RECENT ENTRIES --}}
         <div class="recent-entries">
-          <h4>Recent Entries:</h4>
+          <h5>Recent Entries:</h5>
           <ul class="recent-list">
-            {{#each persons as |person|}}<a class="grey-text text-darken-4" href="/profile/{{person.id}}"><li>{{person.first_name}} {{person.last_name}}<i class="fa-solid fa-arrow-right"></i></a></li>{{/each}}
+            {{#each persons as |person|}}<a class="black-text" href="/profile/{{person.id}}"><li>{{person.first_name}} {{person.last_name}}<i class="fa-solid fa-arrow-right"></i></a></li>{{/each}}
           </ul>
         </div>
 
@@ -55,7 +55,6 @@
       </div>
 
     </div>
-
 
 <div class="fixed-action-btn">
 <a id="add-profile-button" onclick = document.getElementById('modalAddProfile').style.display='block' class="modal-trigger btn-floating right tooltipped btn-large waves-effect waves-light #00838f cyan darken-3"  data-tooltip="Add Profile"><i class="fa-solid fa-plus"></i></a>
@@ -94,7 +93,7 @@
                         <span>Has pet(s)</span>
                     </label>
                 </p>
-                                <p>
+                 <p>
                     <label>
                         <input id="likes_sports" type="checkbox" />
                         <span>Enjoys sports</span>
@@ -104,24 +103,12 @@
             <div class="row">
                 <div class="icon-row col s6">
                     <p>
-                        <label>
-                            <input id="likes_media" type="checkbox" />
-                            <span>Film junkie</span>
-                        </label>
-                    </p>
-                                        <p>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Yellow</span>
-                        </label>
-                    </p>
-                                        <p>
-                        <label>
-                            <input type="checkbox" />
-                            <span>Yellow</span>
-                        </label>
-                    </p>
-                </div>
+                      <label>
+                          <input id="likes_media" type="checkbox" />
+                          <span>Film junkie</span>
+                      </label>
+                  </p>
+              </div>
             </div>
         </div>
     </form>
@@ -140,7 +127,7 @@
 <footer class="page-footer #00acc1 cyan darken-1">
   <div class="container">
     <div>
-      <p>Copyright Text</p>
+
     </div>
   </div>
 

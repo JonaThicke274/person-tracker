@@ -7,11 +7,14 @@ body {
 main {
     background-color: #c9f2f6;
     flex: 1 0 auto;
-
 }
 
 .nav-wrapper {
     font-family: 'Libre Baskerville', serif;
+}
+.brand-logo{
+    margin-left: 20px;
+    font-size: 40px;
 }
 
 .fa-right-from-bracket, .fa-trash, .fa-play{
@@ -37,7 +40,7 @@ main {
     font-family: 'Libre Baskerville', serif;
 }
 .recent-list {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Libre Baskerville', serif;
 }
 
@@ -102,7 +105,20 @@ footer {
 }
 
 .notes-list li{
-    list-style-type: circle;
+   font-size: 20px;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+
+.fa-circle{
+    font-size: 10px;
+    margin-right: 7px;
+}
+
+.note-divider{
+    width: 70%;
+    height: 3px;
+    background-color: rgb(0, 171, 37);
 }
 
 #modalEditProfile, #modalAddNote, #modalDeleteProfile, #modalSignUp {

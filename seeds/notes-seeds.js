@@ -12,6 +12,14 @@ const notesData = [
     {
         note_text: "Doesn't seem to know how to meow, only chirp",
         person_id: 2
+    },
+    {
+        note_text: "Doesn't like tuna :(",
+        person_id: 1
+    },
+    {
+        note_text: "Loves action movies-- favorite is Fast Five",
+        person_id: 2
     }
 ];
 
