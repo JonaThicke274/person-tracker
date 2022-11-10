@@ -1,24 +1,24 @@
 async function editProfileHandler(event){
     event.preventDefault();
 
-    const firstName = document.querySelector('input[id="first_name"]').value.trim();
-    const lastName = document.querySelector('input[id="last_name"]').value.trim();
-    const hasChildren = document.querySelector('input[id="chldrn"]').value.trim();
-    const hasPets = document.querySelector('input[id="pets"]').value.trim();
-    const likesSports = document.querySelector('input[id="sports"]').value.trim();
-    const likesMedia = document.querySelector('input[id="media"]').value.trim();
+    let firstName = document.querySelector('input[id="first_name"]').value.trim();
+    let lastName = document.querySelector('input[id="last_name"]').value.trim();
+    let hasChildren = document.querySelector('input[id="chldrn"]').value.trim();
+    let hasPets = document.querySelector('input[id="pets"]').value.trim();
+    let likesSports = document.querySelector('input[id="sports"]').value.trim();
+    let likesMedia = document.querySelector('input[id="media"]').value.trim();
 
 
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-    
+    // reverting all of the numbers for the boolean values
     hasChildren = parseInt(hasChildren);
     hasPets= parseInt(hasPets);
     likesSports = parseInt(likesSports);
     likesMedia = parseInt(likesMedia)
 
-    const response = await fetch(`api/person/${id}`, {
+    const response = await fetch(`http://localhost:3001/api/person/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             last_name: lastName,

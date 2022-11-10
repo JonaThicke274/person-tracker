@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Router } = require('express');
 const sequelize = require('../config/connection');
 const { Person, Notes } = require('../models');
 
@@ -32,33 +33,26 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.get('/edit/:id', (req, res) => {
-    Person.update({
-        last_name: req.body.last_name,
-        first_name: req.body.first_name,
-        has_children: req.body.has_children,
-        has_pets: req.body.has_pets,
-        likes_sports: req.body.likes_sports,
-        likes_media: req.body.likes_media
-    },
-    {
+// EDIT ID
+router.put('/:id', (req, res) => {
+    Person.update(req.body, {
         where: {
             id: req.params.id
         }
     })
     .then(dbPersonData => {
         if(!dbPersonData[0]){
-            res.status(404).json({ message: 'Nobody found with this id'});
+            res.status(404).json({message: 'No profile found with this id'});
             return;
         }
-        res.json({ message: 'Profile Updated!'})
+        res.json(dbPersonData);
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err)
+        res.status(500)
     })
 })
-
+ 
 
 
 

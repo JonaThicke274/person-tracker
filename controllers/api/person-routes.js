@@ -80,29 +80,26 @@ router.post('/', withAuth, (req, res) => {
     })
 });
 
-// update person info by id
-router.put('/:id', withAuth, (req, res) => {
-    Person.update({
-        last_name: req.body.last_name,
-        first_name: req.body.first_name
-    },
-    {
+router.put('/:id', (req, res) => {
+    Person.update(req.body, {
         where: {
             id: req.params.id
         }
     })
     .then(dbPersonData => {
-        if (!dbPersonData[0]) {
-            res.status(404).json({ message: 'Nobody found with this id'});
+        if(!dbPersonData[0]){
+            res.status(404).json({message: 'No profile found with this id'});
             return;
         }
-        res.json({ message: 'Person updated!' });
+        res.json(dbPersonData);
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
-    });
-});
+        res.status(500)
+    })
+})
+ 
+
 
 // delete person by id 
 router.delete('/:id', withAuth, (req, res) => {
