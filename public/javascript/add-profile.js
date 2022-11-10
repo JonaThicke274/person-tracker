@@ -70,6 +70,7 @@ async function addProfileHandler(event){
         }
     });
 
+    document.location.replace(`/`);
 }
 
 document.getElementById('submitProfile').addEventListener('click', addProfileHandler)
