@@ -78,6 +78,7 @@ async function editProfileHandler(event){
         }
     });   
 
+    document.location.reload();
 }
 
 document.getElementById('submit-edit').addEventListener('click', editProfileHandler);
