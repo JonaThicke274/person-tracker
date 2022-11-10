@@ -63,7 +63,7 @@ async function editProfileHandler(event){
 
 
     console.log(hasChildren, hasPets, likesSports, likesMedia)
-    const response = await fetch(`http://localhost:3001/api/person/${id}`, {
+    const response = await fetch(`https://pocket-portraits.herokuapp.com/api/person/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             last_name: lastName,

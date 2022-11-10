@@ -7,7 +7,7 @@ async function addNoteHandler(event){
         window.location.toString().split('/').length -1
     ];
  
-    const response = await fetch(`http://localhost:3001/api/notes`,{
+    const response = await fetch(`https://pocket-portraits.herokuapp.com/api/notes`,{
         method: 'POST',
         body: JSON.stringify({
             note_text: newNote,
