@@ -6,7 +6,7 @@ async function addNoteHandler(event){
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length -1
     ];
-    console.log('doing something')
+ 
     const response = await fetch(`http://localhost:3001/api/notes`,{
         method: 'POST',
         body: JSON.stringify({

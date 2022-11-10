@@ -84,19 +84,19 @@
             <div class="icon-row col s6">
                 <p>
                     <label>
-                        <input type="checkbox"/>
+                        <input id="has_children" type="checkbox"/>
                         <span>Has child(ren)</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" />
+                        <input id="has_pets" type="checkbox" />
                         <span>Has pet(s)</span>
                     </label>
                 </p>
                                 <p>
                     <label>
-                        <input type="checkbox" />
+                        <input id="likes_sports" type="checkbox" />
                         <span>Enjoys sports</span>
                     </label>
                 </p>
@@ -105,7 +105,7 @@
                 <div class="icon-row col s6">
                     <p>
                         <label>
-                            <input type="checkbox" />
+                            <input id="likes_media" type="checkbox" />
                             <span>Film junkie</span>
                         </label>
                     </p>
@@ -129,14 +129,12 @@
     </div>
     <div class="modal-footer">
 {{!--  ADD CODE TO GET       --}}
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modal1').style.display='none'>Submit</a>
+      <a id="submitProfile" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalAddProfile').style.display='none'>Submit</a>
  
     </div>
   </div> 
 
 </main>
-
-  
 
 
 <footer class="page-footer #00acc1 cyan darken-1">
@@ -155,6 +153,7 @@
 <script src="/javascript/edit-profile.js"></script>
 <script src="/javascript/delete-profile.js"></script>
 <script src="/javascript/add-note.js"></script>
+<script src="/javascript/add-profile.js"></script>
 </body>
 
 </html>
