@@ -6,7 +6,7 @@ async function deleteFormHandler(event) {
     //     window.location.toString().split('/').length - 1
     //   ];
     
-    // will only person under logged user
+    // will only delete person under logged user
     const id = 3
     const response = await fetch(`/api/person/${id}`, {
       method: 'DELETE'
