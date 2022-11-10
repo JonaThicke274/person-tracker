@@ -30,7 +30,7 @@
         {{!-- EDIT BUTTONS --}}
         <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalEditProfile').style.display='block'>Edit Profile</a>
         <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalAddNote').style.display='block'>Add Note</a>
-        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick=document.getElementById('modalDeleteProfile').style.display='block'>Delete Profile</a>
+        <a class="waves-effect waves-light #00838f cyan darken-3 btn" onclick = document.getElementById('modalDeleteProfile').style.display='block'>Delete Profile</a>
     </div>
 </div>
 
@@ -159,7 +159,7 @@
       <h4>Are you sure you want to delete this profile?</h4>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick=document.getElementById('modalDeleteProfile').style.display='none'>Delete<i class="fa-solid fa-trash"></i></a>
+      <a href="#!" id="deletePerson" class="modal-close waves-effect waves-green btn-flat">Delete<i class="fa-solid fa-trash"></i></a>
     </div>
   </div>
 
