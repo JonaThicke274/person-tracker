@@ -18,6 +18,8 @@ async function addNoteHandler(event){
             'Content-Type': 'application/json'
         }
     });
+
+    document.location.reload();
 }
 
 
