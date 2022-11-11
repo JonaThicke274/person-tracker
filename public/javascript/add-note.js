@@ -6,8 +6,8 @@ async function addNoteHandler(event){
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length -1
     ];
- 
-    const response = await fetch(`https://pocket-portraits.herokuapp.com/api/notes`,{
+
+    const response = await fetch(`/api/notes`,{
         method: 'POST',
         body: JSON.stringify({
             note_text: newNote,
@@ -18,6 +18,8 @@ async function addNoteHandler(event){
             'Content-Type': 'application/json'
         }
     });
+
+    document.location.reload();
 }
 
 

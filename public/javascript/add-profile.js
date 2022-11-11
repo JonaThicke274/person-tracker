@@ -54,8 +54,8 @@ async function addProfileHandler(event){
     let firstName = document.querySelector('input[id="first_name"]').value.trim();
 
     console.log('making profile')
-    
-    const response = await fetch(`https://pocket-portraits.herokuapp.com/`, {
+
+    const response = await fetch(`/api/person`, {
         method: 'POST',
         body: JSON.stringify({
             last_name: lastName,
