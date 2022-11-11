@@ -23,7 +23,7 @@
 
 
 ## Deployment Screenshot
-![image](https://user-images.githubusercontent.com/109185830/201233766-f0e43f16-adcc-4511-be74-6477efe0ccdf.png)
+![image](https://user-images.githubusercontent.com/109185830/201234875-0ef1d9db-c76a-4143-ac0f-265ffff48158.png)
 ![image](https://user-images.githubusercontent.com/109185830/201234651-12f309ed-f70b-4869-9857-53ca84af716b.png)
 ![image](https://user-images.githubusercontent.com/109185830/201234677-8cca94dd-69c8-4795-b23a-f24cf0b37714.png)
 
