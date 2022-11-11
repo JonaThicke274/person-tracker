@@ -55,7 +55,7 @@ async function addProfileHandler(event){
 
     console.log('making profile')
     
-    const response = await fetch(`http://localhost:3001/api/person`, {
+    const response = await fetch(`/api/person`, {
         method: 'POST',
         body: JSON.stringify({
             last_name: lastName,
